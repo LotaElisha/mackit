@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private Security Report
+    url: mailto:hilotaelisha@gmail.com?subject=MacKit%20security%20report
+    about: Report a suspected vulnerability privately instead of opening a public issue
+  - name: Telegram Community
+    url: 
+    about: Join our Telegram group for questions and discussions
+  - name: GitHub Discussions
+    url: https://github.com/lotaelisha/mackit/discussions
+    about: Ask questions and share ideas with the community

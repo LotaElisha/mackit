@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MacKit by Lota</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 24px; color: #1a1a2e; line-height: 1.7; }
+  h1 { color: #0f3460; border-bottom: 3px solid #e94560; padding-bottom: 12px; }
+  h2 { color: #16213e; border-bottom: 1px solid #e0e0e0; padding-bottom: 6px; margin-top: 2em; }
+  h3 { color: #0f3460; margin-top: 1.5em; }
+  code, pre { font-family: "SF Mono", Monaco, "Cascadia Code", monospace; }
+  pre { background: #0d1117; color: #c9d1d9; padding: 16px; border-radius: 8px; overflow-x: auto; }
+  code { background: #f0f0f5; color: #d63384; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  pre code { background: none; color: #c9d1d9; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th { background: #0f3460; color: white; padding: 10px 14px; text-align: left; }
+  td { padding: 8px 14px; border-bottom: 1px solid #e0e0e0; }
+  tr:nth-child(even) td { background: #f8f9ff; }
+  a { color: #e94560; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2em 0; }
+  blockquote { border-left: 4px solid #e94560; margin: 0; padding-left: 16px; color: #555; }
+  .footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e0e0; color: #888; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">MacKit by Lota</h1>
+</header>
+<h1 id="mackit-by-lota-developer-guide">MacKit by Lota — Developer Guide</h1>
+<p><strong>Version 1.31.0 | Author: Lota (lotaelisha)</strong></p>
+<p>Everything you need to set up, understand, and contribute to MacKit.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#project-structure">Project Structure</a></li>
+<li><a href="#development-setup">Development Setup</a></li>
+<li><a href="#architecture-overview">Architecture Overview</a></li>
+<li><a href="#running-tests">Running Tests</a></li>
+<li><a href="#code-style">Code Style</a></li>
+<li><a href="#building-binaries">Building Binaries</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#release-process">Release Process</a></li>
+<li><a href="#security">Security</a></li>
+</ol>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p><strong>Required:</strong> - macOS 12 (Monterey) or later - Bash 3.2+ - Go 1.21+ (for the TUI components)</p>
+<p><strong>For development:</strong> - <a href="https://www.shellcheck.net/">ShellCheck</a> — shell script linter - <a href="https://github.com/bats-core/bats-core">BATS</a> — Bash testing framework - <a href="https://golangci-lint.run/">golangci-lint</a> — Go linter</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># Install development tools</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">brew</span> install shellcheck bats-core go golangci-lint</span></code></pre></div>
+<hr />
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>mackit/
+├── mackit              # Main CLI entrypoint (Bash)
+├── mk                  # Lightweight alias wrapper
+├── install.sh          # Installer script
+├── Makefile            # Build configuration
+├── go.mod / go.sum     # Go module dependencies
+│
+├── bin/                # Subcommand scripts
+│   ├── clean.sh        → mk flush
+│   ├── uninstall.sh    → mk wipe
+│   ├── optimize.sh     → mk turbo
+│   ├── analyze.sh      → mk scan
+│   ├── status.sh       → mk matrix
+│   ├── purge.sh        → mk nuke
+│   ├── installer.sh    → mk trace
+│   ├── touchid.sh      → mk auth
+│   └── completion.sh   → mk shell
+│
+├── lib/                # Shared shell libraries
+│   ├── core/
+│   │   ├── common.sh       # Shared utilities, update checks
+│   │   ├── commands.sh     # Command list definition
+│   │   ├── base.sh         # Core base functions
+│   │   ├── file_ops.sh     # Safe file operations
+│   │   ├── log.sh          # Logging functions
+│   │   ├── ui.sh           # Terminal UI helpers
+│   │   ├── sudo.sh         # Privilege management
+│   │   └── timeout.sh      # Timeout utilities
+│   ├── clean/          # mk flush modules
+│   ├── uninstall/      # mk wipe modules
+│   ├── optimize/       # mk turbo modules
+│   ├── clean/          # Cleaning sub-modules
+│   ├── manage/         # Update, whitelist, purge path management
+│   └── check/          # Health check and diagnostics
+│
+├── cmd/                # Go TUI components
+│   ├── analyze/        # mk scan (disk explorer TUI)
+│   │   ├── main.go
+│   │   ├── scanner.go
+│   │   ├── view.go
+│   │   └── ...
+│   └── status/         # mk matrix (system monitor TUI)
+│       ├── main.go
+│       ├── metrics.go
+│       ├── metrics_cpu.go
+│       ├── metrics_memory.go
+│       ├── metrics_disk.go
+│       ├── metrics_network.go
+│       ├── metrics_battery.go
+│       └── ...
+│
+├── tests/              # BATS test suite
+│   ├── clean_core.bats
+│   ├── purge.bats
+│   ├── update.bats
+│   └── ...
+│
+├── scripts/            # Build and utility scripts
+│   ├── check.sh        # Lint all scripts
+│   ├── test.sh         # Run full test suite
+│   └── setup-quick-launchers.sh  # Raycast/Alfred integration
+│
+├── .github/
+│   ├── workflows/      # GitHub Actions CI/CD
+│   └── ISSUE_TEMPLATE/
+│
+└── docs/               # Documentation (you are here)</code></pre>
+<hr />
+<h2 id="development-setup">Development Setup</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co"># 1. Clone the repository</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="fu">git</span> clone https://github.com/lotaelisha/mackit.git</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="bu">cd</span> mackit</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="co"># 2. Install development dependencies</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="ex">brew</span> install shellcheck bats-core golangci-lint</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a><span class="co"># 3. Build Go TUI binaries</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a><span class="fu">make</span> build</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a><span class="co"># 4. Install pre-commit hooks</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a><span class="fu">cp</span> .githooks/* .git/hooks/</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a><span class="fu">chmod</span> +x .git/hooks/*</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a><span class="co"># 5. Run a quick sanity check</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a><span class="ex">./mackit</span> --version</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a><span class="ex">./mackit</span> --help</span></code></pre></div>
+<p><strong>Running directly during development (without installing):</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># From the repo root:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="ex">./mackit</span> flush --dry-run</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="ex">./mackit</span> scan ~/Downloads</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="ex">./mackit</span> matrix</span></code></pre></div>
+<hr />
+<h2 id="architecture-overview">Architecture Overview</h2>
+<p>MacKit uses a <strong>two-layer architecture</strong>:</p>
+<h3 id="layer-1-shell-bash">Layer 1: Shell (Bash)</h3>
+<p>The main entry point (<code>mackit</code>) and all subcommand scripts (<code>bin/*.sh</code>) are written in Bash. This ensures zero installation overhead and maximum compatibility with macOS.</p>
+<p><strong>Command flow:</strong></p>
+<pre><code>User runs: mk flush
+  → mk (wrapper) → mackit → case &quot;flush&quot; → bin/clean.sh
+                                           ↓
+                             sources lib/core/common.sh
+                             sources lib/core/file_ops.sh
+                             sources lib/clean/caches.sh
+                             sources lib/clean/app_caches.sh
+                             sources lib/clean/system.sh
+                             ... runs cleanup tasks</code></pre>
+<p><strong>Key shell conventions:</strong> - All scripts start with <code>set -euo pipefail</code> for strict error handling - Shared utilities live in <code>lib/core/</code> - Each <code>bin/</code> script handles its own argument parsing - <code>lib/core/commands.sh</code> defines the canonical command list (used by help and tab completion)</p>
+<h3 id="layer-2-go-tui-components">Layer 2: Go (TUI Components)</h3>
+<p><code>mk scan</code> and <code>mk matrix</code> are Go programs using the <a href="https://github.com/charmbracelet/bubbletea">Bubbletea</a> TUI framework. They are compiled to binaries and embedded into the installation.</p>
+<p><strong>Go dependency overview:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>charmbracelet/bubbletea</code></td>
+<td>TUI framework (Elm architecture)</td>
+</tr>
+<tr class="even">
+<td><code>charmbracelet/lipgloss</code></td>
+<td>Terminal styling</td>
+</tr>
+<tr class="odd">
+<td><code>shirou/gopsutil</code></td>
+<td>System metrics (CPU, memory, disk, network)</td>
+</tr>
+<tr class="even">
+<td><code>cespare/xxhash</code></td>
+<td>Fast file hashing for <code>mk scan</code></td>
+</tr>
+<tr class="odd">
+<td><code>golang.org/x/sync</code></td>
+<td>Concurrency utilities</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="running-tests">Running Tests</h2>
+<h3 id="full-test-suite">Full Test Suite</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">./scripts/test.sh</span></span></code></pre></div>
+<p>This runs: 1. ShellCheck on all shell scripts 2. Bash syntax checks 3. BATS tests (30+ test files) 4. Go tests (<code>go test ./...</code>) 5. Install/uninstall integration test</p>
+<h3 id="run-specific-tests">Run Specific Tests</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co"># Run a single BATS file</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="ex">bats</span> tests/purge.bats</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="co"># Run all BATS tests</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="ex">bats</span> tests/</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="co"># Run Go tests</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a><span class="ex">go</span> test ./cmd/...</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a><span class="co"># Run Go tests with verbose output</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a><span class="ex">go</span> test -v ./cmd/analyze/...</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a><span class="ex">go</span> test -v ./cmd/status/...</span></code></pre></div>
+<h3 id="lint-only">Lint Only</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="ex">./scripts/check.sh</span></span></code></pre></div>
+<hr />
+<h2 id="code-style">Code Style</h2>
+<h3 id="shell-scripts">Shell Scripts</h3>
+<ul>
+<li>All scripts must pass <code>shellcheck</code> with zero warnings</li>
+<li>Use <code>set -euo pipefail</code> at the top of every script</li>
+<li>Use <code>local</code> for all function-scoped variables</li>
+<li>Quote all variable expansions: <code>"$var"</code> not <code>$var</code></li>
+<li>Prefer <code>[[ ]]</code> over <code>[ ]</code> for conditionals</li>
+<li>Use <code>readonly</code> for constants</li>
+<li>Log with <code>log_success</code>, <code>log_error</code>, <code>log_info</code> from <code>lib/core/log.sh</code></li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co"># Good style example</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="fu">my_function()</span> <span class="kw">{</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    <span class="bu">local</span> <span class="va">input=</span><span class="st">&quot;</span><span class="va">$1</span><span class="st">&quot;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    <span class="bu">local</span> <span class="va">result</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>    <span class="kw">if [[</span> <span class="ot">-z</span> <span class="st">&quot;</span><span class="va">$input</span><span class="st">&quot;</span><span class="kw"> ]]</span>; <span class="kw">then</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>        <span class="ex">log_error</span> <span class="st">&quot;Input is required&quot;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>        <span class="bu">return</span> 1</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a>    <span class="kw">fi</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a>    <span class="va">result=$(</span><span class="ex">process</span> <span class="st">&quot;</span><span class="va">$input</span><span class="st">&quot;</span><span class="va">)</span> <span class="kw">||</span> <span class="bu">return</span> 1</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a>    <span class="ex">log_success</span> <span class="st">&quot;Done: </span><span class="va">$result</span><span class="st">&quot;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a><span class="kw">}</span></span></code></pre></div>
+<h3 id="go-code">Go Code</h3>
+<ul>
+<li>Follow standard Go conventions (<code>gofmt</code>, <code>golangci-lint</code>)</li>
+<li>Use the Bubbletea Elm architecture pattern: <code>Model</code>, <code>Update</code>, <code>View</code></li>
+<li>Keep system metrics polling in the <code>metrics_*.go</code> files</li>
+<li>Keep rendering logic in <code>view.go</code></li>
+</ul>
+<p><strong>Run linter:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="ex">golangci-lint</span> run ./...</span></code></pre></div>
+<hr />
+<h2 id="building-binaries">Building Binaries</h2>
+<p>The Go TUI components are compiled for macOS (amd64 and arm64):</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="co"># Build both architectures</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a><span class="fu">make</span> build</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a><span class="co"># Build for Apple Silicon only</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a><span class="fu">make</span> build-arm64</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true"></a><span class="co"># Build for Intel only</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true"></a><span class="fu">make</span> build-amd64</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true"></a><span class="co"># Clean build artifacts</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true"></a><span class="fu">make</span> clean</span></code></pre></div>
+<p>The binaries are placed in <code>bin/</code> as part of the distribution.</p>
+<p><strong>Release build (creates archives):</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="fu">make</span> release</span></code></pre></div>
+<hr />
+<h2 id="contributing">Contributing</h2>
+<h3 id="before-you-start">Before You Start</h3>
+<ol type="1">
+<li>Check existing <a href="https://github.com/lotaelisha/mackit/issues">issues</a> for duplicates</li>
+<li>For large changes, open an issue first to discuss the approach</li>
+<li>Fork the repo and create a feature branch</li>
+</ol>
+<h3 id="workflow">Workflow</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="co"># Fork and clone</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a><span class="fu">git</span> clone https://github.com/YOUR_USERNAME/mackit.git</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a><span class="bu">cd</span> mackit</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a><span class="fu">git</span> remote add upstream https://github.com/lotaelisha/mackit.git</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a><span class="co"># Create a branch</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a><span class="fu">git</span> checkout -b feature/my-feature</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true"></a><span class="co"># Make changes, then run checks</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true"></a><span class="ex">./scripts/check.sh</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true"></a><span class="ex">./scripts/test.sh</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true"></a><span class="co"># Commit (conventional commits preferred)</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true"></a><span class="fu">git</span> commit -m <span class="st">&quot;feat: add my feature&quot;</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true"></a><span class="co"># Push and open a pull request</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true"></a><span class="fu">git</span> push origin feature/my-feature</span></code></pre></div>
+<h3 id="commit-message-format">Commit Message Format</h3>
+<p>Use <a href="https://www.conventionalcommits.org/">Conventional Commits</a>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>feat:</code></td>
+<td>New feature or command</td>
+</tr>
+<tr class="even">
+<td><code>fix:</code></td>
+<td>Bug fix</td>
+</tr>
+<tr class="odd">
+<td><code>docs:</code></td>
+<td>Documentation changes</td>
+</tr>
+<tr class="even">
+<td><code>refactor:</code></td>
+<td>Code cleanup without behavior change</td>
+</tr>
+<tr class="odd">
+<td><code>test:</code></td>
+<td>Adding or fixing tests</td>
+</tr>
+<tr class="even">
+<td><code>chore:</code></td>
+<td>Build system, CI, tooling</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<pre><code>feat: add mk nuke --paths flag for custom scan directories
+fix: mk auth fails silently when PAM file is read-only
+docs: add developer guide to docs/
+test: add BATS tests for mk flush whitelist handling</code></pre>
+<h3 id="adding-a-new-command">Adding a New Command</h3>
+<ol type="1">
+<li>Create <code>bin/mycommand.sh</code> — the main command script</li>
+<li>Add the command to <code>lib/core/commands.sh</code> in <code>MACKIT_COMMANDS</code></li>
+<li>Add a case entry in <code>mackit</code> (the main dispatch script)</li>
+<li>Add BATS tests in <code>tests/mycommand.bats</code></li>
+<li>Document it in <code>docs/command_reference.md</code></li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="co"># Template for a new bin/ script</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a><span class="kw">set</span> <span class="ex">-euo</span> pipefail</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true"></a><span class="va">SCRIPT_DIR=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">cd</span> <span class="st">&quot;</span><span class="va">$(</span><span class="fu">dirname</span> <span class="st">&quot;</span><span class="va">${BASH_SOURCE[0]}</span><span class="st">&quot;</span><span class="va">)</span><span class="st">/..&quot;</span> <span class="kw">&amp;&amp;</span> <span class="bu">pwd</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true"></a><span class="bu">source</span> <span class="st">&quot;</span><span class="va">$SCRIPT_DIR</span><span class="st">/lib/core/common.sh&quot;</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true"></a><span class="bu">source</span> <span class="st">&quot;</span><span class="va">$SCRIPT_DIR</span><span class="st">/lib/core/file_ops.sh&quot;</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true"></a><span class="co"># Parse args</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true"></a><span class="va">DRY_RUN=</span>false</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true"></a><span class="kw">for</span> <span class="ex">arg</span> in <span class="st">&quot;</span><span class="va">$@</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">do</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true"></a>    <span class="kw">case</span> <span class="st">&quot;</span><span class="va">$arg</span><span class="st">&quot;</span><span class="kw"> in</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true"></a>        --dry-run <span class="kw">|</span> -n<span class="kw">)</span> <span class="va">DRY_RUN=</span>true <span class="kw">;;</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true"></a>        --debug<span class="kw">)</span> <span class="bu">export</span> <span class="va">MK_DEBUG=</span>1 <span class="kw">;;</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true"></a>        *<span class="kw">)</span> <span class="bu">echo</span> <span class="st">&quot;Unknown option: </span><span class="va">$arg</span><span class="st">&quot;</span><span class="kw">;</span> <span class="bu">exit</span> 1 <span class="kw">;;</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true"></a>    <span class="kw">esac</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true"></a><span class="kw">done</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true"></a><span class="co"># Main logic here</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true"></a><span class="fu">main()</span> <span class="kw">{</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true"></a>    <span class="ex">log_info</span> <span class="st">&quot;Running my command...&quot;</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true"></a>    <span class="co"># ...</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true"></a><span class="kw">}</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true"></a><span class="ex">main</span> <span class="st">&quot;</span><span class="va">$@</span><span class="st">&quot;</span></span></code></pre></div>
+<hr />
+<h2 id="release-process">Release Process</h2>
+<p>Releases are automated via GitHub Actions (<code>.github/workflows/release.yml</code>).</p>
+<p><strong>Steps:</strong> 1. Update <code>VERSION</code> in <code>mackit</code> (main script) 2. Update <code>CHANGELOG.md</code> (if present) 3. Commit: <code>git commit -m "chore: bump version to X.Y.Z"</code> 4. Tag: <code>git tag -a vX.Y.Z -m "Release X.Y.Z"</code> 5. Push tag: <code>git push origin vX.Y.Z</code> 6. GitHub Actions automatically: - Runs all tests - Builds Go binaries (amd64 + arm64) - Creates a GitHub Release with archives and SHA256 checksums - Updates the Homebrew formula (if configured)</p>
+<hr />
+<h2 id="security">Security</h2>
+<h3 id="reporting-vulnerabilities">Reporting Vulnerabilities</h3>
+<p>Report security issues to: <strong>lotaelisha@gmail.com</strong></p>
+<p>Do not file public issues for security vulnerabilities.</p>
+<h3 id="safety-boundaries">Safety Boundaries</h3>
+<p>MacKit is designed to be safe by default:</p>
+<ul>
+<li><strong>Protected paths</strong> are hardcoded and can never be cleaned, regardless of user input</li>
+<li><strong>Path traversal</strong> protection: all paths are validated before any operation</li>
+<li><strong>No network calls</strong> except for update checks (which are opt-in)</li>
+<li><strong>No analytics</strong> or telemetry — MacKit never phones home</li>
+<li><strong>All operations are logged</strong> to <code>~/Library/Logs/mackit/mackit.log</code></li>
+</ul>
+<p>See <code>SECURITY.md</code> and <code>SECURITY_AUDIT.md</code> for the full security design.</p>
+<hr />
+<p><em>MacKit by Lota — github.com/lotaelisha/mackit | lotaelisha@gmail.com</em></p>
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MacKit by Lota</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 24px; color: #1a1a2e; line-height: 1.7; }
+  h1 { color: #0f3460; border-bottom: 3px solid #e94560; padding-bottom: 12px; }
+  h2 { color: #16213e; border-bottom: 1px solid #e0e0e0; padding-bottom: 6px; margin-top: 2em; }
+  h3 { color: #0f3460; margin-top: 1.5em; }
+  code, pre { font-family: "SF Mono", Monaco, "Cascadia Code", monospace; }
+  pre { background: #0d1117; color: #c9d1d9; padding: 16px; border-radius: 8px; overflow-x: auto; }
+  code { background: #f0f0f5; color: #d63384; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  pre code { background: none; color: #c9d1d9; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th { background: #0f3460; color: white; padding: 10px 14px; text-align: left; }
+  td { padding: 8px 14px; border-bottom: 1px solid #e0e0e0; }
+  tr:nth-child(even) td { background: #f8f9ff; }
+  a { color: #e94560; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2em 0; }
+  blockquote { border-left: 4px solid #e94560; margin: 0; padding-left: 16px; color: #555; }
+  .footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e0e0; color: #888; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">MacKit by Lota</h1>
+</header>
+<h1 id="mackit-by-lota-command-reference">MacKit by Lota — Command Reference</h1>
+<p><strong>Version 1.31.0 | Author: Lota (lotaelisha)</strong></p>
+<p>Quick-reference sheet for all <code>mk</code> commands, flags, and environment variables.</p>
+<hr />
+<h2 id="command-overview">Command Overview</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+<th>Destructive?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mk flush</code></td>
+<td>Deep system cleanup</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td><code>mk wipe</code></td>
+<td>Smart app uninstaller</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td><code>mk turbo</code></td>
+<td>System optimizer</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td><code>mk scan</code></td>
+<td>Visual disk explorer</td>
+<td>No (uses Trash)</td>
+</tr>
+<tr class="odd">
+<td><code>mk matrix</code></td>
+<td>Live system monitor</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td><code>mk nuke</code></td>
+<td>Project artifact cleaner</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td><code>mk trace</code></td>
+<td>Installer file finder</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td><code>mk auth</code></td>
+<td>Touch ID for sudo</td>
+<td>System-config</td>
+</tr>
+<tr class="odd">
+<td><code>mk shell</code></td>
+<td>Shell tab completion</td>
+<td>Config only</td>
+</tr>
+<tr class="even">
+<td><code>mk sync</code></td>
+<td>Update MacKit</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td><code>mk eject</code></td>
+<td>Remove MacKit</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td><code>mk --help</code></td>
+<td>Show help</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td><code>mk --version</code></td>
+<td>Show version info</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="detailed-command-reference">Detailed Command Reference</h2>
+<hr />
+<h3 id="mk-flush"><code>mk flush</code></h3>
+<p><strong>Purpose:</strong> Scans and removes system junk — caches, logs, browser data, and developer leftovers.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk flush [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--dry-run</code> / <code>-n</code></td>
+<td>Preview targets without deleting</td>
+</tr>
+<tr class="even">
+<td><code>--debug</code></td>
+<td>Show detailed per-file operation logs</td>
+</tr>
+<tr class="odd">
+<td><code>--whitelist</code></td>
+<td>Open the interactive whitelist manager</td>
+</tr>
+<tr class="even">
+<td><code>--json</code></td>
+<td>Output results as JSON</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">mk</span> flush                         # Run cleanup</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="ex">mk</span> flush --dry-run               # See what would be removed</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="ex">mk</span> flush --dry-run --debug       # See everything in detail</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="ex">mk</span> flush --whitelist             # Manage protected paths</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="va">MK_NO_OPLOG=</span>1 <span class="ex">mk</span> flush           # Skip operation logging</span></code></pre></div>
+<p><strong>Cleans:</strong> - <code>~/Library/Caches</code> (user app caches) - <code>/Library/Caches</code> (system caches, requires sudo) - Browser caches (Safari, Chrome, Firefox, Brave) - Xcode derived data (<code>~/Library/Developer/Xcode/DerivedData</code>) - Crash reports (<code>~/Library/Logs/DiagnosticReports</code>) - Homebrew cache (<code>~/Library/Caches/Homebrew</code>) - iOS device backups (optional)</p>
+<hr />
+<h3 id="mk-wipe"><code>mk wipe</code></h3>
+<p><strong>Purpose:</strong> Removes applications and all their hidden remnants — preferences, launch agents, support files.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk wipe [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--dry-run</code> / <code>-n</code></td>
+<td>Preview what would be removed</td>
+</tr>
+<tr class="even">
+<td><code>--debug</code></td>
+<td>Show detailed operation logs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="ex">mk</span> wipe                          # Interactive app selector</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="ex">mk</span> wipe --dry-run                # Preview removal</span></code></pre></div>
+<p><strong>Scans these locations for app remnants:</strong> - <code>/Applications/</code> - <code>~/Applications/</code> - <code>~/Library/Preferences/</code> - <code>~/Library/Application Support/</code> - <code>~/Library/Caches/</code> - <code>~/Library/LaunchAgents/</code> - <code>/Library/LaunchAgents/</code> (sudo) - <code>/Library/LaunchDaemons/</code> (sudo) - <code>~/Library/Containers/</code> - <code>~/Library/Group Containers/</code></p>
+<hr />
+<h3 id="mk-turbo"><code>mk turbo</code></h3>
+<p><strong>Purpose:</strong> Refreshes system caches and runs macOS maintenance tasks to boost performance.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk turbo [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--dry-run</code> / <code>-n</code></td>
+<td>Preview tasks without executing</td>
+</tr>
+<tr class="even">
+<td><code>--debug</code></td>
+<td>Verbose output</td>
+</tr>
+<tr class="odd">
+<td><code>--whitelist</code></td>
+<td>Manage protected optimization rules</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">mk</span> turbo                         # Run all optimizations</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="ex">mk</span> turbo --dry-run               # Preview tasks</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="ex">mk</span> turbo --whitelist             # Protect specific items</span></code></pre></div>
+<p><strong>Tasks:</strong> - Flush DNS cache (<code>dscacheutil -flushcache</code>) - Rebuild Launch Services database - Reset Spotlight index - Clear font cache - Rebuild icon cache - Flush memory page cache (requires sudo)</p>
+<hr />
+<h3 id="mk-scan"><code>mk scan</code></h3>
+<p><strong>Purpose:</strong> Interactive terminal UI for exploring disk usage and finding large files.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk scan [PATH] [OPTIONS]</code></pre>
+<p><strong>Arguments:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>PATH</code></td>
+<td>Directory to scan (default: <code>~</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="ex">mk</span> scan                          # Scan home directory</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="ex">mk</span> scan /                        # Scan entire disk</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="ex">mk</span> scan /Volumes/MyDrive         # Scan external drive</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="ex">mk</span> scan ~/Documents              # Scan specific folder</span></code></pre></div>
+<p><strong>Keyboard Shortcuts:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>↑/↓</code> or <code>j/k</code></td>
+<td>Navigate</td>
+</tr>
+<tr class="even">
+<td><code>Enter</code></td>
+<td>Drill into folder</td>
+</tr>
+<tr class="odd">
+<td><code>Backspace</code></td>
+<td>Go up one level</td>
+</tr>
+<tr class="even">
+<td><code>d</code></td>
+<td>Delete (moves to Trash)</td>
+</tr>
+<tr class="odd">
+<td><code>s</code></td>
+<td>Sort by size</td>
+</tr>
+<tr class="even">
+<td><code>n</code></td>
+<td>Sort by name</td>
+</tr>
+<tr class="odd">
+<td><code>q</code></td>
+<td>Quit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="mk-matrix"><code>mk matrix</code></h3>
+<p><strong>Purpose:</strong> Real-time system health dashboard showing live metrics.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk matrix [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--json</code></td>
+<td>Output metrics as JSON (for scripting)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="ex">mk</span> matrix                        # Launch live dashboard</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="ex">mk</span> matrix --json                 # JSON output for scripting</span></code></pre></div>
+<p><strong>Metrics Displayed:</strong> - CPU: per-core usage, load average - GPU: activity percentage - Memory: used, free, compressed, swap - Disk: read/write I/O per second - Network: bytes sent/received per second - Battery: charge %, health, cycle count - Processes: top 5 by CPU, top 5 by memory</p>
+<p><strong>Keyboard:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>q</code></td>
+<td>Quit</td>
+</tr>
+<tr class="even">
+<td><code>Tab</code></td>
+<td>Switch panel focus</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="mk-nuke"><code>mk nuke</code></h3>
+<p><strong>Purpose:</strong> Finds and removes developer project artifacts — <code>node_modules</code>, <code>target/</code>, <code>dist/</code>, etc.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk nuke [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--dry-run</code> / <code>-n</code></td>
+<td>Preview targets without deleting</td>
+</tr>
+<tr class="even">
+<td><code>--debug</code></td>
+<td>Show detailed logs</td>
+</tr>
+<tr class="odd">
+<td><code>--paths</code></td>
+<td>Configure project scan directories</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="ex">mk</span> nuke                          # Scan and nuke artifacts</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a><span class="ex">mk</span> nuke --dry-run                # Preview targets</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a><span class="ex">mk</span> nuke --paths                  # Edit scan directories</span></code></pre></div>
+<p><strong>Default artifacts removed:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Path Pattern</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>node_modules/</code></td>
+<td>Node.js dependencies</td>
+</tr>
+<tr class="even">
+<td><code>.gradle/</code></td>
+<td>Gradle build cache</td>
+</tr>
+<tr class="odd">
+<td><code>target/</code></td>
+<td>Rust/Java build output</td>
+</tr>
+<tr class="even">
+<td><code>dist/</code></td>
+<td>Frontend build output</td>
+</tr>
+<tr class="odd">
+<td><code>build/</code></td>
+<td>Build output</td>
+</tr>
+<tr class="even">
+<td><code>__pycache__/</code></td>
+<td>Python bytecode</td>
+</tr>
+<tr class="odd">
+<td><code>.next/</code></td>
+<td>Next.js build cache</td>
+</tr>
+<tr class="even">
+<td><code>.nuxt/</code></td>
+<td>Nuxt.js build cache</td>
+</tr>
+<tr class="odd">
+<td><code>.parcel-cache/</code></td>
+<td>Parcel bundler cache</td>
+</tr>
+</tbody>
+</table>
+<p>Configure scan paths:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="ex">mk</span> nuke --paths</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a><span class="co"># or edit directly:</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a><span class="ex">~/.config/mackit/purge_paths</span></span></code></pre></div>
+<hr />
+<h3 id="mk-trace"><code>mk trace</code></h3>
+<p><strong>Purpose:</strong> Finds installer files (<code>.pkg</code>, <code>.dmg</code>) that are no longer needed after installation.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk trace [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--dry-run</code> / <code>-n</code></td>
+<td>Preview without removing</td>
+</tr>
+<tr class="even">
+<td><code>--debug</code></td>
+<td>Verbose output</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="ex">mk</span> trace                         # Find and remove installer files</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a><span class="ex">mk</span> trace --dry-run               # Preview files found</span></code></pre></div>
+<p><strong>Scans:</strong> - <code>~/Downloads/</code> - <code>~/Desktop/</code> - <code>/tmp/</code></p>
+<hr />
+<h3 id="mk-auth"><code>mk auth</code></h3>
+<p><strong>Purpose:</strong> Configures macOS to use Touch ID for <code>sudo</code> authentication.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk auth [enable|disable] [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>enable</code></td>
+<td>Enable Touch ID for sudo</td>
+</tr>
+<tr class="even">
+<td><code>disable</code></td>
+<td>Disable Touch ID for sudo</td>
+</tr>
+<tr class="odd">
+<td><code>--dry-run</code> / <code>-n</code></td>
+<td>Preview changes to <code>/etc/pam.d/sudo</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="ex">mk</span> auth enable                   # Enable fingerprint for sudo</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a><span class="ex">mk</span> auth disable                  # Revert to password for sudo</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a><span class="ex">mk</span> auth enable --dry-run         # Preview the PAM file change</span></code></pre></div>
+<p><strong>Note:</strong> Requires <code>sudo</code> access. Changes <code>/etc/pam.d/sudo</code> to add <code>pam_tid.so</code>.</p>
+<hr />
+<h3 id="mk-shell"><code>mk shell</code></h3>
+<p><strong>Purpose:</strong> Installs shell tab completion for <code>mackit</code> and <code>mk</code> commands.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk shell [bash|zsh|fish] [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bash</code></td>
+<td>Generate/install for Bash</td>
+</tr>
+<tr class="even">
+<td><code>zsh</code></td>
+<td>Generate/install for Zsh</td>
+</tr>
+<tr class="odd">
+<td><code>fish</code></td>
+<td>Generate/install for Fish</td>
+</tr>
+<tr class="even">
+<td><code>--dry-run</code> / <code>-n</code></td>
+<td>Preview config changes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a><span class="ex">mk</span> shell                         # Auto-detect shell and install</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true"></a><span class="ex">mk</span> shell zsh                     # Install Zsh completion</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true"></a><span class="ex">mk</span> shell bash                    # Install Bash completion</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true"></a><span class="ex">mk</span> shell fish                    # Install Fish completion</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true"></a><span class="bu">eval</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">mk</span> shell bash<span class="va">)</span><span class="st">&quot;</span>          # One-line inline install</span></code></pre></div>
+<p>After installing: restart terminal or <code>source ~/.zshrc</code>.</p>
+<hr />
+<h3 id="mk-sync"><code>mk sync</code></h3>
+<p><strong>Purpose:</strong> Updates MacKit to the latest version.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk sync [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--force</code> / <code>-f</code></td>
+<td>Force reinstall even if already on latest</td>
+</tr>
+<tr class="even">
+<td><code>--nightly</code></td>
+<td>Install latest unreleased main branch build</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a><span class="ex">mk</span> sync                          # Update to latest stable</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true"></a><span class="ex">mk</span> sync --force                  # Force reinstall</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true"></a><span class="ex">mk</span> sync --nightly                # Install nightly build (script install only)</span></code></pre></div>
+<hr />
+<h3 id="mk-eject"><code>mk eject</code></h3>
+<p><strong>Purpose:</strong> Completely removes MacKit from the system.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>mk eject [OPTIONS]</code></pre>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--dry-run</code> / <code>-n</code></td>
+<td>Preview what would be removed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a><span class="ex">mk</span> eject                         # Remove MacKit</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true"></a><span class="ex">mk</span> eject --dry-run               # Preview removal</span></code></pre></div>
+<p><strong>Removes:</strong> - <code>/usr/local/bin/mackit</code> - <code>/usr/local/bin/mk</code> - <code>~/.config/mackit/</code> - <code>~/.cache/mackit/</code> - <code>~/Library/Logs/mackit/</code></p>
+<hr />
+<h2 id="global-options">Global Options</h2>
+<p>These flags work with most commands:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--debug</code></td>
+<td>Enable verbose debug output</td>
+</tr>
+<tr class="even">
+<td><code>--dry-run</code> / <code>-n</code></td>
+<td>Preview without making changes</td>
+</tr>
+<tr class="odd">
+<td><code>--help</code> / <code>-h</code></td>
+<td>Show command help</td>
+</tr>
+<tr class="even">
+<td><code>--version</code> / <code>-V</code></td>
+<td>Show version and system info</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="environment-variables">Environment Variables</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>MK_DEBUG</code></td>
+<td><code>0</code></td>
+<td>Set to <code>1</code> to enable debug mode globally</td>
+</tr>
+<tr class="even">
+<td><code>MK_DRY_RUN</code></td>
+<td><code>0</code></td>
+<td>Set to <code>1</code> to force dry-run mode globally</td>
+</tr>
+<tr class="odd">
+<td><code>MK_NO_OPLOG</code></td>
+<td><code>0</code></td>
+<td>Set to <code>1</code> to disable operation logging</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a><span class="va">MK_DEBUG=</span>1 <span class="ex">mk</span> flush              # Debug mode for flush</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true"></a><span class="va">MK_NO_OPLOG=</span>1 <span class="ex">mk</span> flush          # Skip logging to file</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true"></a><span class="va">MK_DRY_RUN=</span>1 <span class="ex">mk</span> wipe            # Force dry-run</span></code></pre></div>
+<hr />
+<h2 id="log-files">Log Files</h2>
+<table>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>~/Library/Logs/mackit/mackit.log</code></td>
+<td>All file operations</td>
+</tr>
+</tbody>
+</table>
+<p>View the log:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a><span class="fu">tail</span> -f ~/Library/Logs/mackit/mackit.log</span></code></pre></div>
+<hr />
+<h2 id="configuration-files">Configuration Files</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>~/.config/mackit/purge_paths</code></td>
+<td>Custom directories for <code>mk nuke</code> to scan</td>
+</tr>
+<tr class="even">
+<td><code>~/.config/mackit/whitelist</code></td>
+<td>Paths protected from <code>mk flush</code></td>
+</tr>
+<tr class="odd">
+<td><code>~/.cache/mackit/</code></td>
+<td>Internal state and caches</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>MacKit by Lota — github.com/lotaelisha/mackit | lotaelisha@gmail.com</em></p>
+</body>
+</html>
