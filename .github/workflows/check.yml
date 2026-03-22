@@ -51,8 +51,8 @@ jobs:
       - name: Commit formatting changes
         if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
         run: |
-          git config user.name "Tw93"
-          git config user.email "lotaelisha@qq.com"
+          git config user.name "Lota"
+          git config user.email "lotaelisha@gmail.com"
           if [[ -n $(git status --porcelain) ]]; then
             git add .
             git commit -m "chore: auto format code"
