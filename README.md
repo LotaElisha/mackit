@@ -4,14 +4,14 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/lotaelisha/mackit/stargazers"><img src="https://img.shields.io/github/stars/lotaelisha/mackit?style=flat-square" alt="Stars"></a>
-  <a href="https://github.com/lotaelisha/mackit/releases"><img src="https://img.shields.io/github/v/tag/lotaelisha/mackit?label=version&style=flat-square" alt="Version"></a>
+  <a href="https://github.com/LotaElisha/mackit/stargazers"><img src="https://img.shields.io/github/stars/lotaelisha/mackit?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/LotaElisha/mackit/releases"><img src="https://img.shields.io/github/v/tag/lotaelisha/mackit?label=version&style=flat-square" alt="Version"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
-  <a href="https://github.com/lotaelisha/mackit/commits"><img src="https://img.shields.io/github/commit-activity/m/lotaelisha/mackit?style=flat-square" alt="Commits"></a>
+  <a href="https://github.com/LotaElisha/mackit/commits"><img src="https://img.shields.io/github/commit-activity/m/lotaelisha/mackit?style=flat-square" alt="Commits"></a>
 </p>
 
 <p align="center">
-  <img src="https://github.com/lotaelisha/mackit/raw/main/assets/mackit-preview.png" alt="MacKit - 95.50GB freed" width="1000" />
+  <img src="https://github.com/LotaElisha/mackit/raw/main/assets/mackit-preview.png" alt="MacKit - 95.50GB freed" width="1000" />
 </p>
 
 ## Features
@@ -37,7 +37,7 @@ brew install lotaelisha/mackit/mackit
 curl -fsSL https://raw.githubusercontent.com/lotaelisha/mackit/main/install.sh | bash
 ```
 
-> Note: MacKit is built for macOS. An experimental Windows version is available in the [windows branch](https://github.com/lotaelisha/mackit/tree/windows) for early adopters.
+> Note: MacKit is built for macOS. An experimental Windows version is available in the [windows branch](https://github.com/LotaElisha/mackit/tree/windows) for early adopters.
 
 **Run**
 
@@ -327,26 +327,26 @@ After running the script, complete these steps in Raycast:
 
 ### Terminal Detection
 
-MacKit auto-detects your terminal app. iTerm2 has known compatibility issues. We highly recommend [Kaku](https://github.com/lotaelisha/Kaku). Other good options are Alacritty, kitty, WezTerm, Ghostty, and Warp. To override, set `MO_LAUNCHER_APP=<name>`.
+MacKit auto-detects your terminal app. iTerm2 has known compatibility issues. We highly recommend [Kaku](https://github.com/LotaElisha/Kaku). Other good options are Alacritty, kitty, WezTerm, Ghostty, and Warp. To override, set `MO_LAUNCHER_APP=<name>`.
 
 ## Community Love
 
 Thanks to everyone who helped build MacKit. Go follow them. ❤️
 
-<a href="https://github.com/lotaelisha/mackit/graphs/contributors">
+<a href="https://github.com/LotaElisha/mackit/graphs/contributors">
   <img src="./CONTRIBUTORS.svg?v=2" width="1000" />
 </a>
 
 <br/><br/>
 Real feedback from users who shared MacKit on X.
 
-<img src="https://github.com/lotaelisha/mackit/raw/main/assets/community.png" alt="Community feedback on MacKit" width="1000" />
+<img src="https://github.com/LotaElisha/mackit/raw/main/assets/community.png" alt="Community feedback on MacKit" width="1000" />
 
 ## Support
 
 - If MacKit helped you, star the repo or share it with your friends.
 - Got ideas or bugs? Read the [Contributing Guide](CONTRIBUTING.md) and open an issue or PR.
-- Like MacKit? ⭐ Star the repo on [GitHub](https://github.com/lotaelisha/mackit) and share it with your friends.
+- Like MacKit? ⭐ Star the repo on [GitHub](https://github.com/LotaElisha/mackit) and share it with your friends.
 
 ## License
 

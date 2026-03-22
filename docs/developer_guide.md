@@ -118,7 +118,7 @@ mackit/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/lotaelisha/mackit.git
+git clone https://github.com/LotaElisha/mackit.git
 cd mackit
 
 # 2. Install development dependencies
@@ -302,7 +302,7 @@ make release
 
 ### Before You Start
 
-1. Check existing [issues](https://github.com/lotaelisha/mackit/issues) for duplicates
+1. Check existing [issues](https://github.com/LotaElisha/mackit/issues) for duplicates
 2. For large changes, open an issue first to discuss the approach
 3. Fork the repo and create a feature branch
 
@@ -312,7 +312,7 @@ make release
 # Fork and clone
 git clone https://github.com/YOUR_USERNAME/mackit.git
 cd mackit
-git remote add upstream https://github.com/lotaelisha/mackit.git
+git remote add upstream https://github.com/LotaElisha/mackit.git
 
 # Create a branch
 git checkout -b feature/my-feature
@@ -427,4 +427,4 @@ See `SECURITY.md` and `SECURITY_AUDIT.md` for the full security design.
 
 ---
 
-*MacKit by Lota — github.com/lotaelisha/mackit | lotaelisha@gmail.com*
+*MacKit by Lota — github.com/LotaElisha/mackit | lotaelisha@gmail.com*

@@ -157,12 +157,12 @@ resolve_source_dir() {
     if [[ "$branch" != "main" && "$branch" != "dev" ]]; then
         branch="$(normalize_release_tag "$branch")"
     fi
-    local url="https://github.com/lotaelisha/mackit/archive/refs/heads/main.tar.gz"
+    local url="https://github.com/LotaElisha/mackit/archive/refs/heads/main.tar.gz"
 
     if [[ "$branch" == "dev" ]]; then
-        url="https://github.com/lotaelisha/mackit/archive/refs/heads/dev.tar.gz"
+        url="https://github.com/LotaElisha/mackit/archive/refs/heads/dev.tar.gz"
     elif [[ "$branch" != "main" ]]; then
-        url="https://github.com/lotaelisha/mackit/archive/refs/tags/${branch}.tar.gz"
+        url="https://github.com/LotaElisha/mackit/archive/refs/tags/${branch}.tar.gz"
     fi
 
     start_line_spinner "Fetching MacKit source, ${branch}..."
@@ -197,7 +197,7 @@ resolve_source_dir() {
             git_args+=("--branch" "$branch")
         fi
 
-        if git clone "${git_args[@]}" https://github.com/lotaelisha/mackit.git "$tmp/mackit" > /dev/null 2>&1; then
+        if git clone "${git_args[@]}" https://github.com/LotaElisha/mackit.git "$tmp/mackit" > /dev/null 2>&1; then
             stop_line_spinner
             SOURCE_DIR="$tmp/mackit"
             return 0
@@ -246,7 +246,7 @@ get_latest_release_tag_from_git() {
     if ! command -v git > /dev/null 2>&1; then
         return 1
     fi
-    git ls-remote --tags --refs https://github.com/lotaelisha/mackit.git 2> /dev/null |
+    git ls-remote --tags --refs https://github.com/LotaElisha/mackit.git 2> /dev/null |
         awk -F/ '{print $NF}' |
         grep -E '^V[0-9]' |
         sort -V |
@@ -545,7 +545,7 @@ download_binary() {
         fi
         return 1
     fi
-    local url="https://github.com/lotaelisha/mackit/releases/download/V${version}/${binary_name}-darwin-${arch_suffix}"
+    local url="https://github.com/LotaElisha/mackit/releases/download/V${version}/${binary_name}-darwin-${arch_suffix}"
 
     # Skip preflight network checks to avoid false negatives.
 

@@ -457,4 +457,4 @@ tail -f ~/Library/Logs/mackit/mackit.log
 
 ---
 
-*MacKit by Lota — github.com/lotaelisha/mackit | lotaelisha@gmail.com*
+*MacKit by Lota — github.com/LotaElisha/mackit | lotaelisha@gmail.com*

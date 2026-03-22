@@ -33,7 +33,7 @@ Optional flags:
 ### Manual Clone
 
 ```bash
-git clone https://github.com/lotaelisha/mackit.git
+git clone https://github.com/LotaElisha/mackit.git
 cd mackit
 ./mackit --help
 ```
@@ -346,4 +346,4 @@ rm -rf ~/.config/mackit ~/.cache/mackit ~/Library/Logs/mackit
 
 ---
 
-*MacKit by Lota — github.com/lotaelisha/mackit | lotaelisha@gmail.com*
+*MacKit by Lota — github.com/LotaElisha/mackit | lotaelisha@gmail.com*

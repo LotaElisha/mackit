@@ -1,4 +1,4 @@
-module github.com/lotaelisha/mackit
+module github.com/LotaElisha/mackit
 
 go 1.25.0
 
